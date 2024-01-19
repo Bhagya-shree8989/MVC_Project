@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index6</title>
+</head>
+<body>
+    <div>
+        @*Write the below statement at top of the View *@
+        @model MVCDataTransfer.Models.Product
+        @*Write this code under the <div> tag:*@
+        <table border="1" align="center" width="15%">
+            <caption>Product Details</caption>
+            <tr><td>Id:</td><td>@Model.Id</td></tr>
+            <tr><td>Name:</td><td>@Model.Name</td></tr>
+            <tr>
+                <td>Price:</td>
+                <td>
+                    @{
+                        double? Price = Model.Price + (Model.Price * 10 / 100);
+                        @Price
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

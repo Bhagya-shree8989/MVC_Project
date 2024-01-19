@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayEmp2</title>
+</head>
+<body>
+    <div>
+        @*Write the below statement at top of the View *@
+        @model MVCUIDesigning.Models.Employee
+        @*Write this code under the <div> tag:*@
+        <table border="1" align="center">
+            <caption>Employee Details</caption>
+            <tr><td>Employee Id:</td><td>@Model.Id</td></tr>
+            <tr><td>Employee Name:</td><td>@Model.Name</td></tr>
+            <tr><td>Employee Job:</td><td>@Model.Job</td></tr>
+            <tr><td>Employee Salary:</td><td>@Model.Salary</td></tr>
+            <tr><td colspan="2" align="center"><a href="/Emp/AddEmp">Add a new Employee</a></td></tr>
+        </table>
+    </div>
+</body>
+</html>

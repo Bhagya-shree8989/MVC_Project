@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index5</title>
+</head>
+<body>
+    <div>
+        @{
+            int? Id = Convert.ToInt32(ViewData.Eval("Id"));
+            string Name = ViewData.Eval("Name").ToString();
+            double? Price = ViewData.Eval("Price") as double?;
+        }
+        <table border="1" align="center" width="15%">
+            <caption>Product Details</caption>
+            <tr><td>Id:</td><td>@Id</td></tr>
+            <tr><td>Name:</td><td>@Name</td></tr>
+            <tr>
+                <td>Price:</td>
+                <td>
+                    @{
+                        Price = Price + (Price * 10 / 100);
+                        @Price
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
